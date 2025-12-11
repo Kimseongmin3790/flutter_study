@@ -11,11 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> labels = [
-      'C', '(', '%', '/',
-      '7', '8', '9', '*',
-      '4', '5', '6', '-',
-      '1', '2', '3', '+',
-      '0', '00', '.', '='
+      'image.jfif', 'image-14.png', 'dbd.jfif',
+      'dyingLight.jfif', 'lastofus.jfif', 'overwatch2.jfif'
     ];
     return MaterialApp(
       home: Scaffold(
@@ -25,17 +22,14 @@ class MyApp extends StatelessWidget {
         ),
         body: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
+              crossAxisCount: 3,
               mainAxisSpacing: 10,
               crossAxisSpacing: 10
           ),
           itemCount: labels.length,
           itemBuilder: (context, index){
-            return ElevatedButton(
-              onPressed: (){},
-              child: Center(
-                child: Text(labels[index], style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30))
-              ),
+            return Container(
+              child: Image.asset(labels[index])
             );
           },
         ),
