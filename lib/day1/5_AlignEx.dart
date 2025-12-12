@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         ),
         drawer: Drawer(),
         body: Align(
-          alignment: Alignment.centerRight,
+          alignment: Alignment.bottomRight,
           child: Container(
             child: Text("zzz"),
             // margin: EdgeInsets.all(10),
