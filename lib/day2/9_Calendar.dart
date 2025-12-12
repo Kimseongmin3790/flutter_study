@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qr_flutter/qr_flutter.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,11 +18,14 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: QrImageView(
-            data: 'http://www.naver.com',
-            version: QrVersions.auto,
-
-            size: 200.0,
+          child: Column(
+            children: [
+              TableCalendar(
+              firstDay: DateTime.utc(2010, 10, 16),
+              lastDay: DateTime.utc(2030, 3, 14),
+              focusedDay: DateTime.now(),
+              )
+            ],
           ),
         ),
       ),

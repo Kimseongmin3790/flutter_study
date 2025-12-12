@@ -74,6 +74,19 @@ class _MyAppState extends State<MyApp> {
                 listChanged(imgList[2], !isChecked);
               },
             ),
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10
+                ),
+                itemCount: checkedList.length,
+                itemBuilder: (context, index){
+                  return Image.asset(checkedList[index]);
+                },
+              ),
+            )
           ],
         ),
       ),
