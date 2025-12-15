@@ -13,9 +13,9 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   TextEditingController _todoCtrl = TextEditingController();
+  List<String> list = [];
   @override
   Widget build(BuildContext context) {
-    List<String> list = [];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -25,8 +25,7 @@ class _MyAppState extends State<MyApp> {
           children: [
             Row(
               children: [
-                SizedBox(
-                  width: 400,
+                Expanded(
                   child: TextField(
                     controller: _todoCtrl,
                     decoration: InputDecoration(

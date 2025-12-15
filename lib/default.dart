@@ -12,5 +12,3 @@ class MyApp extends StatelessWidget {
     return const Placeholder();
   }
 }
-
-
