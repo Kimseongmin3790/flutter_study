@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'UserList.dart';
+import 'db.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -29,7 +31,7 @@ class _UserInsertState extends State<UserInsert> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("sqlite 실습"),
+        title: Text("sqflite 실습"),
         actions: [
           IconButton(
               onPressed: (){
@@ -67,7 +69,14 @@ class _UserInsertState extends State<UserInsert> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ElevatedButton(
-                onPressed: (){},
+                onPressed: () async {
+                  String name = nameCtrl.text;
+                  int age = int.tryParse(ageCtrl.text) ?? 0;
+                  await DB.insertData(name, age);
+
+                  nameCtrl.clear();
+                  ageCtrl.clear();
+                },
                 child: Text("사용자 추가")
             ),
           )
